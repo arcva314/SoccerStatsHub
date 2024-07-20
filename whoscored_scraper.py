@@ -23,8 +23,13 @@ def scrape_player_season(url):
             case = 'td.dribbleWonPerGame'
         else:
             case = 'td.accurateLongPassPerGame'
-        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, case)))
+        try:
+            WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, case)))
+        except:
+            return
         html_code = driver.page_source
+        soup = BeautifulSoup(html_code, 'html.parser')
+        player_name = soup.find('h1', class_='header-name').text
         if link == 'Passing':
             df = pd.read_html(html_code)
             for d in df:
@@ -38,6 +43,8 @@ def scrape_player_season(url):
                                       'Inter': 'Interceptions Per Game', 'Fouls': 'Fouls Per Game', 'Offsides': 'Offsides Won Per Game', 'Clear': 'Clearances Per Game', 'Drb_x': 'Times Dribbled Past Per Game',
                                       'Blocks': 'Blocks Per Game', 'OwnG': 'Own Goals', 'KeyP': 'Key Passes Per Game', 'Drb_y': 'Dribbles Per Game', 'Fouled': 'Fouled Per Game', 'Off': 'Offsides Per Game',
                                       'Disp': 'Times Dispossessed Per Game', 'UnsTch': 'Poor Touches Per Game', 'AvgP': 'Key Passes Per Game', 'Crosses': 'Successful Crosses Per Game', 'LongB': 'Successful Long Balls Per Game', 'ThrB': 'Successful Through Balls Per Game'}, inplace=True)
+            merged_df['Player Name'] = player_name.strip()
+            merged_df = merged_df[:-4]
             return merged_df
 def scrape_league_season(driver, season, data):
     print(data)
@@ -129,15 +136,10 @@ def extract_player_links(team_link, data):
             print(player_name, player_url)
             if player_name not in data:
                 data[player_name] = player_url
-with open('whoscored_teams.pkl', 'rb') as file:
-    p = pickle.load(file)
-    data = pickle.load(file)
-vals = list(data.values())
-with open('whoscored_players.pkl', 'rb') as file:
+
+with open('player_data.pkl', 'rb') as file:
     index = pickle.load(file)
-    player_links = pickle.load(file)
-for i in range(index, len(vals)):
-    extract_player_links(vals[i], player_links)
-    with open('whoscored_players.pkl', 'wb') as file:
-        pickle.dump(i+1, file)
-        pickle.dump(player_links, file)
+    dfs = pickle.load(file)
+player_season_data = pd.concat(dfs)
+player_season_data.to_csv('player_seasons.csv')
+

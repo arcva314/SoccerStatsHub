@@ -1,0 +1,41 @@
+.navbar {
+    background-color: rgb(148, 253, 253);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15vw;
+    max-width: 150px;
+    height: 100vh;
+    position: relative;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    margin: 10px 0;
+  }
+  
+  .nav-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  li {
+    list-style: none
+  }
+  
+  ul {
+    margin: 0
+  }
+  ul.nav {
+    margin: 0 auto;
+    height: 100%;
+  }
+  
+  ul.nav li {
+    margin-right: 20px;
+    float: right;
+    line-height: 45px;
+  }

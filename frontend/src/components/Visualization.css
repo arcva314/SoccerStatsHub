@@ -1,0 +1,10 @@
+.visualization-container img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.visualization-container img:hover {
+    transform: scale(1.05);
+}

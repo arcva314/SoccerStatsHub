@@ -1,0 +1,30 @@
+.stats-component {
+    margin: 20px 0;
+}
+
+.stats-component h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.stats-component .checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.stats-component div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.stats-component input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.stats-component label {
+    font-size: 16px;
+    color: #555;
+}

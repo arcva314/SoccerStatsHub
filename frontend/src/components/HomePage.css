@@ -1,0 +1,22 @@
+.messivsronaldo {
+    display: flex;
+}
+.home-info {
+    color: black;
+}
+.messi-pic {
+    width: 18%;
+    height: 100vh;
+}
+.messi-stats {
+    width: 60vw;
+    height: 50vh;
+}
+.ronaldo-stats {
+    width: 60vw;
+    height: 50vh;
+}
+.ronaldo-pic {
+    width: 18%;
+    height: 100vh;
+}

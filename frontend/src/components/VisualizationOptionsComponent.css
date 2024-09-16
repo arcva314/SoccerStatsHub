@@ -1,0 +1,39 @@
+.visualization-options {
+    margin: 20px;
+  }
+
+  .visualization-options h3 {
+    color: black;
+  }
+  .visualization-options label {
+    color: black;
+  }
+  .visualization-options option {
+    color: black;
+  }
+  .option-group {
+    margin-bottom: 15px;
+  }
+  
+  .option-group label {
+    margin-right: 10px;
+  }
+  
+  .option-group input,
+  .option-group select,
+  .option-group textarea {
+    margin-left: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

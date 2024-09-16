@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(49, 110, 222); /* Adjust this as needed */
+    width: 100vw;
+    height: 15vh;
+  }
+  .container {
+    display: flex;
+  }
+  .header-img {
+    width: 70px;
+    height: 70px;
+    padding-right: 30px;
+    padding-left: 0px;
+  }
+  .header-content {
+    text-align: center;
+    width: 80vw;
+  }
+  .header-content h1 {
+    margin: 0;
+    font-size: 6vw;
+    color: rgb(255, 238, 0); /* Adjust the color as needed */
+  }
+  .header-content p {
+    margin: 0;
+    font-size: 1.5vw;
+    color: #edd4d4; /* Adjust the color as needed */
+  }
+  .manager-information {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .manager-results {
+    width: 400px;
+  }
+  .manager-results li {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+  }
+  .manager-results p {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+  }
+  .welcome {
+    color: #000000;
+    border: 2px solid red;
+    background-color: coral;
+  }
+  .added {
+    color: #000000;
+  }
+  .added li {
+    background-color: brown;
+    outline-color: #000000;
+  }

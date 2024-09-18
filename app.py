@@ -5,6 +5,7 @@ import sqlite3
 import base64
 from src import Info, Visualization
 import numpy as np
+import cv2
 app = Flask(__name__, static_folder='frontend/dist', static_url_path='')
 CORS(app)
 def get_db_connection():

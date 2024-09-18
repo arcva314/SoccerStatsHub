@@ -26,7 +26,7 @@ const PlayerPage = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
     // Fetch distinct player names when the component mounts
-    axios.get('http://localhost:5000/api/players')
+    axios.get('/api/players')
       .then(response => {
         setPlayers(response.data);
       }).catch(error => {setError(error.message)});
@@ -34,7 +34,7 @@ const PlayerPage = () => {
 
   useEffect(() => {
     if (playerName) {
-      axios.get(`http://localhost:5000/api/seasons?player_name=${playerName}`)
+      axios.get(`/api/seasons?player_name=${playerName}`)
         .then(response => {
           setSeasons(response.data);
         })
@@ -42,14 +42,14 @@ const PlayerPage = () => {
           setError(error.message);
         });
 
-      axios.get(`http://localhost:5000/api/competitions?player_name=${playerName}`)
+      axios.get(`/api/competitions?player_name=${playerName}`)
         .then(response => {
           setCompetitions(response.data);
         })
         .catch(error => {
           setError(error.message);
         });
-      axios.get(`http://localhost:5000/api/stats`).then(response => {setStats(response.data);}).catch(error => {setError(error.message);});
+      axios.get(`/api/stats`).then(response => {setStats(response.data);}).catch(error => {setError(error.message);});
     }
   }, [playerName]);
 

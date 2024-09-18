@@ -21,18 +21,18 @@ const ManagerPage = () => {
   const [managerOptions, setManagerOptions] = useState([]);
   const [images, setImages] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:5000/api/managers').then(response => {setManagers(response.data);});
+    axios.get('/api/managers').then(response => {setManagers(response.data);});
   }, []);
   const handleManagerSearch = (data) => {
     setFilteredManagers(data);
   };
   useEffect(() => {
     if (managerName) {
-      axios.get(`http://localhost:5000/api/manager_seasons?manager_name=${managerName}`)
+      axios.get(`/api/manager_seasons?manager_name=${managerName}`)
         .then(response => {
           setManagerSeasons(response.data);
         });
-      axios.get(`http://localhost:5000/api/manager_stats`).then(response => {setManagerStats(response.data);});
+      axios.get(`/api/manager_stats`).then(response => {setManagerStats(response.data);});
     }
   }, [managerName]);
   const handleManagerNameChange = (name) => {

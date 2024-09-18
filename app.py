@@ -5,7 +5,6 @@ import sqlite3
 import cv2
 import base64
 from src import Info, Visualization
-from langchain_community.llms import Ollama
 import numpy as np
 app = Flask(__name__, static_folder='frontend/dist', static_url_path='')
 CORS(app)
@@ -80,7 +79,7 @@ def visualize():
     img_base64 = ""
     conn = get_db_connection()
     data = request.json['player_info']
-    llm = Ollama(model='llama3')
+    llm = None
     images = []
     for player in data:
         global colors, viz_options
@@ -140,7 +139,7 @@ def visualize_manager():
     import matplotlib
     matplotlib.use('Agg')
     img_base64 = ""
-    llm = Ollama(model='llama3')
+    llm = None
     conn = get_db_connection()
     data = request.json['manager_info']
     images = []

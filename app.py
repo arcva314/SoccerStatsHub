@@ -2,7 +2,6 @@ from flask import Flask, jsonify, send_from_directory, request
 from flask_cors import CORS
 import os
 import sqlite3
-import cv2
 import base64
 from src import Info, Visualization
 import numpy as np

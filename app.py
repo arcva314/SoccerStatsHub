@@ -9,7 +9,7 @@ import cv2
 app = Flask(__name__, static_folder='frontend/dist', static_url_path='')
 CORS(app)
 def get_db_connection():
-    conn = sqlite3.connect('SoccerStatsHub.db')
+    conn = sqlite3.connect('player_manager_scripts_and_data/SoccerStatsHub.db')
     conn.row_factory = sqlite3.Row
     return conn
 

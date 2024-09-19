@@ -6,7 +6,7 @@ import re
 import base64
 import sqlite3
 def get_db_connection():
-    conn = sqlite3.connect('../SoccerStatsHub.db')
+    conn = sqlite3.connect('../player_manager_scripts_and_data/SoccerStatsHub.db')
     conn.row_factory = sqlite3.Row
     return conn
 db_handler = get_db_connection()
